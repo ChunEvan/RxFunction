@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 26
-    buildToolsVersion "26.0.0"
+    buildToolsVersion "${BUILD_TOOL_VERSION}"
     defaultConfig {
         applicationId "io.evan.rxfunction"
         minSdkVersion 15
@@ -21,9 +21,9 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    androidTestCompile("com.android.support.test.espresso:espresso-core:${ESPRESSO_VERSION}", {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:26.+'
-    testCompile 'junit:junit:4.12'
+    compile "com.android.support:appcompat-v7:${ANDROID_SUPPORT_VERSION}"
+    testCompile "junit:junit:${JUNIT_VERSION}"
 }
